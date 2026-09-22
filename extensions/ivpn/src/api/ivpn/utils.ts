@@ -13,7 +13,7 @@ import {
 
 export function parseIvpnStatusOutput(stdout: string): IvpnInfoParsed {
   const rgx =
-    /VPN\s*:\s*(?<vpnStatus>[A-Z]+)(\n.*?\s*(?<serverHostname>\S+) \[(?<serverEndpoint>[^\]]+)\], (?<city>.*) \((?<countryCode>[A-Z]{2})\), (?<country>.+)\n.*?Protocol\s*:\s*(?<protocol>[\w]+)( \((?<obfuscation>.+)\))?\n.*?Local IP\s*:\s*(?<localIp>[\d.]+)\n.*?Server IP\s*:\s*(?<serverIp>[\d.]+) \((?<serverProtocol>\w+):(?<serverPort>\d+)\)\n.*?Connected\s*:\s*(?<connectedSince>[\d\- :+A-Za-z]+)\n.*?DNS\s*:\s*(?<dns>[^\n]+))?\n.*?Firewall\s*:\s*(?<fwEnabled>Enabled|Disabled)( \(!\))?\n.*?Allow LAN\s*:\s*(?<fwAllowLan>true|false)\n.*?Allow IVPN servers\s*:\s*(?<fwAllowIvpn>true|false)/;
+    /VPN\s*:\s*(?<vpnStatus>[A-Z]+)([\s\S]*?\s*(?<serverHostname>\S+) \[(?<serverEndpoint>[^\]]+)\], (?<city>.*) \((?<countryCode>[A-Z]{2})\), (?<country>.+)[\s\S]*?Protocol\s*:\s*(?<protocol>[\w]+)( \((?<obfuscation>.+)\))?[\s\S]*?Local IP\s*:\s*(?<localIp>[\d.]+)[\s\S]*?Server IP\s*:\s*(?<serverIp>[\d.]+) \((?<serverProtocol>\w+):(?<serverPort>\d+)\)[\s\S]*?Connected\s*:\s*(?<connectedSince>[\d\- :+A-Za-z]+)[\s\S]*?DNS\s*:\s*(?<dns>[^\n]+))?[\s\S]*?Firewall\s*:\s*(?<fwEnabled>Enabled|Disabled)( \(!\))?[\s\S]*?Allow LAN\s*:\s*(?<fwAllowLan>true|false)[\s\S]*?Allow IVPN servers\s*:\s*(?<fwAllowIvpn>true|false)/;
 
   const match = stdout.match(rgx);
   if (!match || !match.groups)
