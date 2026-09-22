@@ -1,4 +1,4 @@
-import { Toast, getPreferenceValues, showHUD, showToast } from "@raycast/api";
+import { Toast, showHUD, showToast } from "@raycast/api";
 
 import { IVPN } from "@/api/ivpn";
 import { withNoViewErrorHandler } from "@/utils/errorHandler";
@@ -13,10 +13,7 @@ export default withNoViewErrorHandler(async () => {
 
   if (initially.vpnStatusSimplified === "DISCONNECTED") {
     showToast({ title: "IVPN Connecting...", style: Toast.Style.Animated });
-    await IVPN.connect({
-      strategy: getPrefs().defaultConnectStrategy,
-      protocol: getPrefs().preferredProtocol,
-    });
+    await IVPN.connect({ strategy: "LAST" });
     showToast({ title: "IVPN Connected" });
     return;
   }
@@ -32,5 +29,3 @@ export default withNoViewErrorHandler(async () => {
     showToast({ title: "Something went wrong", style: Toast.Style.Failure });
   }
 });
-
-const getPrefs = () => getPreferenceValues<Preferences.ToggleConcise>();

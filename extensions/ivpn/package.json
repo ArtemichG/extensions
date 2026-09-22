@@ -12,52 +12,6 @@
     "Applications"
   ],
   "license": "MIT",
-  "preferences": [
-    {
-      "name": "preferredProtocol",
-      "title": "Preferred Protocol",
-      "description": "The VPN protocol this extension will use by default.",
-      "default": "any",
-      "type": "dropdown",
-      "data": [
-        {
-          "title": "Any",
-          "value": "any"
-        },
-        {
-          "title": "OpenVPN",
-          "value": "OpenVPN"
-        },
-        {
-          "title": "WireGuard",
-          "value": "WireGuard"
-        }
-      ],
-      "required": true
-    },
-    {
-      "name": "defaultConnectStrategy",
-      "title": "Default Connect Strategy",
-      "description": "How to choose an IVPN server when connecting.",
-      "type": "dropdown",
-      "default": "FASTEST",
-      "data": [
-        {
-          "title": "Pick fastest server",
-          "value": "FASTEST"
-        },
-        {
-          "title": "Pick last-used server",
-          "value": "LAST"
-        },
-        {
-          "title": "Pick random server",
-          "value": "RANDOM"
-        }
-      ],
-      "required": false
-    }
-  ],
   "commands": [
     {
       "name": "toggle",

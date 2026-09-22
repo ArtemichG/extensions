@@ -2,7 +2,7 @@
 
 This fork contains one command: **Toggle Connect**.
 
-- If IVPN is disconnected, it connects using the configured protocol and server strategy.
+- If IVPN is disconnected, it reconnects using IVPN's last-used connection settings.
 - If IVPN is connected, it disconnects.
 
 ### Prerequisites
