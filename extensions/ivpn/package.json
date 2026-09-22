@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "ivpn",
-  "title": "IVPN",
-  "description": "Extension for interacting with IVPN.",
+  "title": "IVPN Toggle",
+  "description": "Toggle the IVPN connection from Raycast.",
   "icon": "extension-icon.png",
   "author": "boradatti",
   "platforms": [
@@ -38,7 +38,7 @@
     {
       "name": "defaultConnectStrategy",
       "title": "Default Connect Strategy",
-      "description": "How to choose an IVPN server in quick-connect commands (Connect, Toggle, and Quick Toggle).",
+      "description": "How to choose an IVPN server when connecting.",
       "type": "dropdown",
       "default": "FASTEST",
       "data": [
@@ -56,127 +56,13 @@
         }
       ],
       "required": false
-    },
-    {
-      "name": "flagIconSource",
-      "title": "Flag Icon Source",
-      "description": "Where flag icons are retrieved from.",
-      "type": "dropdown",
-      "default": "flagsapi.com",
-      "data": [
-        {
-          "title": "flagsapi.com (flat)",
-          "value": "flagsapi.com"
-        },
-        {
-          "title": "flagcdn.com (wavy)",
-          "value": "flagcdn.com"
-        }
-      ],
-      "required": false
     }
   ],
   "commands": [
     {
-      "name": "check-concise",
-      "title": "Peek Status",
-      "description": "Checks if IVPN is currently connected.",
-      "mode": "no-view"
-    },
-    {
-      "name": "check-verbose",
-      "title": "View Status Details",
-      "description": "Displays detailed information about your current IVPN connection status.",
-      "mode": "view"
-    },
-    {
-      "name": "toggle-concise",
-      "title": "Quick Toggle",
-      "description": "Toggles connection status and shows a concise, unintrusive toast message.",
-      "mode": "no-view"
-    },
-    {
-      "name": "toggle-verbose",
-      "title": "Toggle",
-      "description": "Toggles connection status and shows a detailed info window.",
-      "mode": "view"
-    },
-    {
-      "name": "servers-list",
-      "title": "Browse Servers",
-      "description": "Lets you pick from a list of servers to connect to.",
-      "mode": "view",
-      "preferences": [
-        {
-          "name": "connectDisconnectBehavior",
-          "title": "Connect/Disconnect Behavior",
-          "description": "Desired UI behavior when connecting & disconnecting.",
-          "type": "dropdown",
-          "data": [
-            {
-              "title": "Stay in list",
-              "value": "stayInList"
-            },
-            {
-              "title": "Show interactive view",
-              "value": "showInteractiveView"
-            }
-          ],
-          "required": false,
-          "default": "stayInList"
-        }
-      ]
-    },
-    {
-      "name": "quick-connect",
-      "title": "Connect",
-      "description": "Connects with last-used parameters.",
-      "mode": "no-view"
-    },
-    {
-      "name": "quick-connect-random",
-      "title": "Connect to Random Server",
-      "description": "Connects to a random IVPN server.",
-      "mode": "no-view",
-      "disabledByDefault": true
-    },
-    {
-      "name": "quick-connect-fastest",
-      "title": "Connect to Fastest Server",
-      "description": "Connects to the fastest IVPN server.",
-      "mode": "no-view",
-      "disabledByDefault": true
-    },
-    {
-      "name": "quick-disconnect",
-      "title": "Disconnect",
-      "description": "Closes current connection.",
-      "mode": "no-view"
-    },
-    {
-      "name": "account-info",
-      "title": "View Account Details",
-      "description": "Shows information about the currently authenticated IVPN account.",
-      "mode": "view"
-    },
-    {
-      "name": "login",
-      "title": "Log in",
-      "description": "Logs you into your IVPN account given an account ID.",
-      "arguments": [
-        {
-          "type": "text",
-          "name": "accountId",
-          "placeholder": "Account ID",
-          "required": true
-        }
-      ],
-      "mode": "no-view"
-    },
-    {
-      "name": "logout",
-      "title": "Log out",
-      "description": "Logs you out of your IVPN account.",
+      "name": "toggle",
+      "title": "Toggle Connect",
+      "description": "Connects to IVPN when disconnected and disconnects when connected.",
       "mode": "no-view"
     }
   ],

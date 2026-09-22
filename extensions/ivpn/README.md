@@ -1,6 +1,9 @@
-# IVPN for Raycast
+# IVPN Toggle for Raycast
 
-This extension allows you to quickly interact with your IVPN account, minimizing context-switching.
+This fork contains one command: **Toggle Connect**.
+
+- If IVPN is disconnected, it connects using the configured protocol and server strategy.
+- If IVPN is connected, it disconnects.
 
 ### Prerequisites
 
