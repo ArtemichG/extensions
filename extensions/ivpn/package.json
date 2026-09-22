@@ -18,6 +18,12 @@
       "title": "Toggle Connect",
       "description": "Connects to IVPN when disconnected and disconnects when connected.",
       "mode": "no-view"
+    },
+    {
+      "name": "reconnect",
+      "title": "Reconnect",
+      "description": "Disconnects and reconnects IVPN, or connects if already disconnected.",
+      "mode": "no-view"
     }
   ],
   "dependencies": {
